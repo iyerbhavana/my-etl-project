@@ -13,6 +13,7 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -23,8 +24,9 @@ jobs:
       - name: Upload HTML
         uses: actions/upload-pages-artifact@v1
         with:
-          path: . index.html
+          path: .   index.html
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+
