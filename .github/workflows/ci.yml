@@ -1,0 +1,14 @@
+name: Simple CI Workflow
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+steps:
+    - name: Echo Build Message
+      run: echo "Build OK"
+
+Add basic GitHub Actions workflow
