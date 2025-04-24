@@ -24,7 +24,7 @@ jobs:
       - name: Upload HTML
         uses: actions/upload-pages-artifact@v1
         with:
-          path: .   index.html
+          path: .   
 
       - name: Deploy to GitHub Pages
         id: deployment
