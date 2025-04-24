@@ -11,4 +11,3 @@ steps:
     - name: Echo Build Message
       run: echo "Build OK"
 
-Add basic GitHub Actions workflow
