@@ -6,9 +6,9 @@ on:
       - main
 
 permissions:
-  contents: read  # allows reading your repo files
-  pages: write    # allows writing to GitHub Pages
-  id-token: write # for OIDC authentication (required by configure-pages)
+  contents: read    # allows reading your repo files
+  pages: write      # allows writing to GitHub Pages
+  id-token: write   # for OIDC auth
 
 jobs:
   deploy:
@@ -16,15 +16,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4              # bump to v4
 
       - name: Configure Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v4      # bump to v4
 
       - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3  # bump to v3
         with:
-          path: .  # root directory, deploy everything
+          path: .                             # root directory
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        id: deployment
+        uses: actions/deploy-pages@v4        # bump to v4
