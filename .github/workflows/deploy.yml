@@ -8,24 +8,27 @@ on:
 permissions:
   contents: read    # allows reading your repo files
   pages: write      # allows writing to GitHub Pages
-  id-token: write   # for OIDC auth
+  id-token: write   # for OIDC authentication
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    environment:
+      name: github-pages  # specify the environment
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4              # bump to v4
+        uses: actions/checkout@v4
 
       - name: Configure Pages
-        uses: actions/configure-pages@v4      # bump to v4
+        uses: actions/configure-pages@v4
 
       - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v3  # bump to v3
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: .                             # root directory
+          path: .  # deploy everything in the root (including index.html)
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4        # bump to v4
+        uses: actions/deploy-pages@v4
